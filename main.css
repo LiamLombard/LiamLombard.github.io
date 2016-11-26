@@ -1,0 +1,38 @@
+html {
+  height:100%;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #333;
+  background-image: linear-gradient(100deg, rgba(53,60,88,.6), rgba(55,191,141,.6)), url(background1.jpg);
+  background-size: cover; /* To display wallpaper at full screen size */
+  justify-content:center;;
+  align-items:center;
+  display:flex;
+}
+h2 {
+  color: rgba(40, 40, 40, 1);
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  color: rgba(17, 51, 163, 0.8);
+  display: inline-block;
+  padding: 4px;
+}
+a {
+  color: #353C58;
+  text-decoration: none;
+  padding: 8px;
+}
+a:hover {
+  color: #D2E7DC;
+  background: #00B5A2;/*#353C58;*/
+}
+i {
+  padding-right: 5px;
+}

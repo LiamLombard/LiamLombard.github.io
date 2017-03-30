@@ -7,8 +7,8 @@ body {
   color: #333;
   background-image: linear-gradient(100deg, rgba(53,60,88,.6), rgba(55,191,141,.6)), url(samuraichamploo2.jpg);
   background-size: cover; /* To display wallpaper at full screen size */
-  justify-content:center;;
-  align-items:center;
+  justify-content:left;;
+  align-items:left;
   display:flex;
 }
 h2 {

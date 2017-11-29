@@ -187,5 +187,4 @@ $(document).ready(function(){
     document.getElementById("search-bar").addEventListener("keydown", function(e) {
         if (e.keyCode == 13) { newSearch(); }
     }, false);
-    $("#field").focus();
 });

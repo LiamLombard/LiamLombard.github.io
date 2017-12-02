@@ -4,6 +4,7 @@ engines=[
   {name:"DuckDuckGo", url:"https://duckduckgo.com/?q="},
   {name:"Google", url:"https://www.google.it/search?q="},
   {name:"Google Images", url:"https://www.google.com/search?&tbm=isch&q="},
+  {name:"YouTube", url:"https://www.youtube.com/results?search_query="},
   {name:"GitHub", url:"https://github.com/search?utf8=✓&q="}
 ];
 //Update clock every 1/2 sec.

@@ -139,11 +139,11 @@ function changeEngine(n){
 }
 
 // //Generate the dropdown list from the engines array
-// function generateEngines(){
-//     for(var i = 0; i < engines.length; i++){
-//         $("#engine-list").html($("#engine-list").html()+'<a class="dropdown-item" href="#" onclick="changeEngine('+i+')">'+engines[i].name+'</a>');
-//     }
-// }
+function generateEngines(){
+    for(var i = 0; i < engines.length; i++){
+        $("#engine-list").html($("#engine-list").html()+'<a class="dropdown-item" href="#" onclick="changeEngine('+i+')">'+engines[i].name+'</a>');
+    }
+}
 // //Save an engine choice as a cookie
 // function setDefaultEngine(cvalue, exdays) {
 //     var d = new Date();

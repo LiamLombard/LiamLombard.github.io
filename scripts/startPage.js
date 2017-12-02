@@ -179,11 +179,11 @@ $(document).ready(function(){
     startTime();
     writeDate();
     generateEngines();
-    var defEngine=getDefaultEngine();
-    if(defEngine == "")
-        changeEngine(0);
-    else
-        changeEngine(defEngine);
+    // var defEngine=getDefaultEngine();
+    // if(defEngine == "")
+    //     changeEngine(0);
+    // else
+    //     changeEngine(defEngine);
     //Allows to use return to start a new search
     document.getElementById("search-bar").addEventListener("keydown", function(e) {
         if (e.keyCode == 13) { newSearch(); }

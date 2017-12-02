@@ -135,38 +135,38 @@ function changeEngine(n){
         $("#dropdown-btn").html(engines[n].name);
     }
     currEngine=n;
-    setDefaultEngine(n, 30);
+    // setDefaultEngine(n, 30);
 }
 
-//Generate the dropdown list from the engines array
-function generateEngines(){
-    for(var i = 0; i < engines.length; i++){
-        $("#engine-list").html($("#engine-list").html()+'<a class="dropdown-item" href="#" onclick="changeEngine('+i+')">'+engines[i].name+'</a>');
-    }
-}
-//Save an engine choice as a cookie
-function setDefaultEngine(cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = "defaultEngine=" + cvalue + ";" + expires + ";path=/";
-}
-//Get the last used engine from the cookies
-function getDefaultEngine() {
-    var name = "defaultEngine=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
+// //Generate the dropdown list from the engines array
+// function generateEngines(){
+//     for(var i = 0; i < engines.length; i++){
+//         $("#engine-list").html($("#engine-list").html()+'<a class="dropdown-item" href="#" onclick="changeEngine('+i+')">'+engines[i].name+'</a>');
+//     }
+// }
+// //Save an engine choice as a cookie
+// function setDefaultEngine(cvalue, exdays) {
+//     var d = new Date();
+//     d.setTime(d.getTime() + (exdays*24*60*60*1000));
+//     var expires = "expires="+ d.toUTCString();
+//     document.cookie = "defaultEngine=" + cvalue + ";" + expires + ";path=/";
+// }
+// //Get the last used engine from the cookies
+// function getDefaultEngine() {
+//     var name = "defaultEngine=";
+//     var decodedCookie = decodeURIComponent(document.cookie);
+//     var ca = decodedCookie.split(';');
+//     for(var i = 0; i <ca.length; i++) {
+//         var c = ca[i];
+//         while (c.charAt(0) == ' ') {
+//             c = c.substring(1);
+//         }
+//         if (c.indexOf(name) == 0) {
+//             return c.substring(name.length, c.length);
+//         }
+//     }
+//     return "";
+// }
 
 //Open a new tab with the generated link
 function newSearch(){

@@ -13,6 +13,9 @@ html, body{
 
 body{
     background-image: linear-gradient(100deg, rgba(53,60,88,.6), rgba(55,191,141,.6)), url(images/musashi.png);
+    background-size:     cover;   
+    background-repeat:   no-repeat;
+    background-position: center center;
 }
 
 #links{

@@ -1,170 +1,159 @@
-<!DOCTYPE HTML>
 <html>
 <head>
   <title>Start</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/startPage.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="Style/main.css">
+  <link rel="stylesheet" href="Style/bootstrap.min.css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="centered">
-          <!--Date section-->
-          <div class="text-center disable-select" id="weekday"></div>
-          <div class="text-center disable-select" id="date"></div>
-          <div class="text-center disable-select" id="clock"></div>
-          <!-- Search bar -->
-          <div class="row justify-content-center" id="search-bar">
-              <div class="input-group col-md-8">
-                  <span class="input-group-btn">
-                      <button class="btn btn-secondary" onclick="newSearch()"><i class="fa fa-search"></i></button>
-                  </span>
-                  <input type="text" class="form-control field-box" id="field" placeholder="Search..." autofocus>
-                  <div class="input-group-btn">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdown-btn">
-                          DuckDuckGo
-                      </button>
-                      <div class="dropdown-menu" id="engine-list">
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- Link row -->
-          <div class="row justify-content-center disable-select" id="links">
-              <div class="col-md-8 text-center">
-              <!-- New link template:
-                  Note: fa-stack enable the stack of multiple icons; fa-circle is the external circle, fa-stack-2x makes the icon bigger, fa-inverse inverts colors
-                  <a href="LINK">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa FONT-AWESOME-ICON-NAME fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              -->
-                  <a href="https://github.com/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://facebook.com/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-facebook fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://messenger.com/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-commenting fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://linkedin.com/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-linkedin fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://outlook.live.com/owa/?path=/mail/inbox">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-envelope fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://www.youtube.com/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-youtube fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://www.twitch.tv/directory">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-twitch fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://smile.amazon.co.uk/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-amazon fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://www.reddit.com/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-reddit-alien fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://crunchyroll.com/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-play fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://www.dropbox.com/h">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-dropbox fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://drive.google.com/drive/my-drive">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-google fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://bitbucket.org/lomboss/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-bitbucket fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://www.netflix.com/browse">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-step-forward fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://duo.dur.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1123_1">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-graduation-cap fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://www.humblebundle.com/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-shopping-bag fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://app.plex.tv/desktop">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-television fa-inverse"></i>
-                      </span>
-                  </a>
-                  <a href="https://192.168.1.89:12322/transmission/web/">
-                      <span class="fa-stack fa-2x">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-stack-1x fa-download fa-inverse"></i>
-                      </span>
-                  </a>
-                </div>
-              </div>
-          </div>
+  <object type="image/svg+xml" data="hex.svg"></object>
+
+  <div class="row justify-content-center disable-select" id="links">
+    <div class="col-md-9 text-center">
+        <a href="https://github.com/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://facebook.com/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-facebook fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://messenger.com/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-commenting fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://linkedin.com/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-linkedin fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://outlook.live.com/owa/?path=/mail/inbox">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-envelope fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://www.youtube.com/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-youtube fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://www.twitch.tv/directory">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-twitch fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://smile.amazon.co.uk/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-amazon fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://www.reddit.com/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-reddit-alien fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://crunchyroll.com/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-play fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://www.dropbox.com/h">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-dropbox fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://drive.google.com/drive/my-drive">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-google fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://bitbucket.org/lomboss/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-bitbucket fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://www.netflix.com/browse">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-step-forward fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://duo.dur.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1123_1">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-graduation-cap fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://www.humblebundle.com/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-shopping-bag fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://app.plex.tv/desktop">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-television fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://192.168.1.89:12322/transmission/web/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-download fa-inverse"></i>
+            </span>
+        </a>
+        <a href="https://wiki.liamlombard.me/">
+            <span class="fa-stack fa-2x">
+                <i class="fa  fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-book fa-inverse"></i>
+            </span>
+        </a>
       </div>
     </div>
-  </div>
 
+    <div class="btn-grp row justify-content-center">
+      <div class="col-md-6" id="search-bar1">
+        <div class="input-group col-md-6">
+            <input type="text" class="form-control field-box" id="field1" placeholder="DuckDuckGo" autofocus>
+        </div>
+      </div>
+      <div class="col-md-6" id="search-bar2">
+        <div class="input-group col-md-6">
+            <input type="text" class="form-control field-box" id="field2" placeholder="Google">
+        </div>
+      </div>
+    </div>
+    <div class="btn-grp row justify-content-center">
+      <div class="col-md-6" id="search-bar3">
+        <div class="input-group col-md-6">
+            <input type="text" class="form-control field-box" id="field3" placeholder="Google Images" autofocus>
+        </div>
+      </div>
+      <div class="col-md-6" id="search-bar4">
+        <div class="input-group col-md-6">
+            <input type="text" class="form-control field-box" id="field4" placeholder="Youtube">
+        </div>
+      </div>
+    </div>
 
-
-
-  <!-- JQuery, Popper and Bootstrap plugins-->
-    <script src="scripts/jquery-3.2.1.slim.min.js"></script>
-    <script src="scripts/popper.min.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="scripts/startPage.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
 </body>
 </html>

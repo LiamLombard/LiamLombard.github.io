@@ -71,11 +71,17 @@ label
   line-height: 30px;
 }
 
+#mdn-logo
+{
+  height: 25px;
+  border-radius: 4px;
+}
+
 .engineSelector
 {
   margin: 10px 10px 10px 10px;
   padding: 5px 5px 5px 5px;
-  font: 1.1em sans-serif;
+  font: 1.5em sans-serif;
   color: #8c95ad;
 }
 

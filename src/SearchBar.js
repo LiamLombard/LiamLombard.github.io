@@ -1,5 +1,6 @@
 import React from 'react';
 import EngineSelector from './EngineSelector';
+import {FaGoogle, FaImages, FaStackOverflow, FaCalculator, FaYoutube, FaSpotify, FaAmazon } from 'react-icons/fa';
 
 class SearchBar extends React.Component 
 {
@@ -7,11 +8,14 @@ class SearchBar extends React.Component
   {
     super();
     this.engines=[
-        {name:"Google", prefix:"!g"},
-        {name:"Google Images", prefix:"!gi"},
-        {name:"YouTube", prefix:"!yt"},
-        {name:"MDN", prefix:"!mdn"},
-        {name:"Stack Overflow", prefix:"!so"},
+        {name:<FaGoogle/>, prefix:"!g"},
+        {name:<FaImages/>, prefix:"!gi"},
+        {name:<FaYoutube/>, prefix:"!yt"},
+        {name:<img id="mdn-logo" src="mdnlogo.svg" alt=""></img>, prefix:"!mdn"},
+        {name:<FaStackOverflow/>, prefix:"!so"},
+        {name:<FaCalculator/>, prefix:"!wa"},
+        {name:<FaSpotify/>, prefix:"!spotify"},
+        {name:<FaAmazon/>, prefix:"!auk"},
       ];
     this.currentEngines = new Set();
 
@@ -40,17 +44,17 @@ class SearchBar extends React.Component
   {
     if(event.key === 'Enter')
     {
+      const searchterm = encodeURIComponent(document.getElementById("searchbar").value)
       if(this.currentEngines.size === 0)
       {
-        window.open("https://duckduckgo.com/?q="+document.getElementById("searchbar").value, "_self");
+        window.open("https://duckduckgo.com/?q="+searchterm, "_self");
       }
       else
       {
         for (let item of this.orderSet(this.currentEngines))
         {
-          window.open("https://duckduckgo.com/?q="+item.prefix+" "+document.getElementById("searchbar").value, (this.currentEngines.size === 1) ? "_self": "_blank");
+          window.open("https://duckduckgo.com/?q="+item.prefix+" "+searchterm, (this.currentEngines.size === 1) ? "_self": "_blank");
         }
-        window.open("https://duckduckgo.com/?q="+document.getElementById("searchbar").value, "_self");
       }
     }
   }

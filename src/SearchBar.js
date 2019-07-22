@@ -7,14 +7,21 @@ class SearchBar extends React.Component
   {
     super();
     this.engines=[
-        {name:"DuckDuckGo", url:"https://duckduckgo.com/?q="},
-        {name:"Google", url:"https://www.google.it/search?q="},
-        {name:"Google Images", url:"https://www.google.com/search?&tbm=isch&q="},
-        {name:"YouTube", url:"https://www.youtube.com/results?search_query="},
+        {name:"Google", prefix:"!g"},
+        {name:"Google Images", prefix:"!gi"},
+        {name:"YouTube", prefix:"!yt"},
+        {name:"MDN", prefix:"!mdn"},
+        {name:"Stack Overflow", prefix:"!so"},
       ];
-    this.currentEngines = new Set([{name:"DuckDuckGo", url:"https://duckduckgo.com/?q="}]);
+    this.currentEngines = new Set();
 
     this.handleCheckboxes = this.handleCheckboxes.bind(this);
+
+    this.eng = [];
+    for (var i = 0; i < this.engines.length; i++) 
+    {
+        this.eng.push(<EngineSelector callback={this.handleCheckboxes} engine={this.engines[i]}/>);
+    }
   }
 
   handleCheckboxes(engine)
@@ -33,11 +40,34 @@ class SearchBar extends React.Component
   {
     if(event.key === 'Enter')
     {
-      for (let item of this.currentEngines)
+      if(this.currentEngines.size === 0)
       {
-        window.open(item.url+document.getElementById("searchbar").value);
+        window.open("https://duckduckgo.com/?q="+document.getElementById("searchbar").value, "_self");
+      }
+      else
+      {
+        for (let item of this.orderSet(this.currentEngines))
+        {
+          window.open("https://duckduckgo.com/?q="+item.prefix+" "+document.getElementById("searchbar").value, (this.currentEngines.size === 1) ? "_self": "_blank");
+        }
+        window.open("https://duckduckgo.com/?q="+document.getElementById("searchbar").value, "_self");
       }
     }
+  }
+
+  orderSet(set)
+  {
+    var newset = new Set();
+    var tempStack = [];
+    for (let item of set)
+    { 
+      tempStack.push(item);
+    }
+    for (var i = 0; i < set.size; i++)
+    {
+      newset.add(tempStack.pop());
+    }
+    return newset;
   }
 
 
@@ -45,10 +75,7 @@ class SearchBar extends React.Component
   {
     return <div className="searchbox">
       <div className="carousel">
-      <EngineSelector callback={this.handleCheckboxes} engine={this.engines[0]} checked={true}/>
-      <EngineSelector callback={this.handleCheckboxes} engine={this.engines[1]}/>
-      <EngineSelector callback={this.handleCheckboxes} engine={this.engines[2]}/>
-      <EngineSelector callback={this.handleCheckboxes} engine={this.engines[3]}/>
+      {this.eng}
       </div>
       <input id="searchbar" type="search" onKeyPress={this.handleKeyPress} autoFocus/>
     </div>

@@ -18,9 +18,10 @@ class EngineSelector extends React.Component
 
   render() 
   {
-    return <div className="engineSelector">
-      <label>{this.props.engine.name}</label>
-      <input className="engineSelector" type="checkbox" engine={this.props.engine} checked={this.state.checked} onClick={this.toggleChecked}></input>
+    return <div className={this.state.checked ? "engineSelector checked" : "engineSelector"}>
+      <label className="noselect">{this.props.engine.name}
+      <input className="engineSelector" type="checkbox" checked={this.state.checked} onClick={this.toggleChecked}></input>
+      </label>
     </div>
   }
 }

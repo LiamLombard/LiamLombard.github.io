@@ -1,13 +1,14 @@
 import React from 'react';
 import EngineSelector from './EngineSelector';
-import {FaGoogle, FaImages, FaStackOverflow, FaCalculator, FaYoutube, FaSpotify, FaAmazon } from 'react-icons/fa';
+import KeywordSelector from './KeywordSelector';
+import {FaGoogle, FaImages, FaStackOverflow, FaCalculator, FaYoutube, FaSpotify, FaAmazon, FaReddit, FaMapMarkedAlt } from 'react-icons/fa';
 
 class SearchBar extends React.Component 
 {
   constructor()
   {
     super();
-    this.engines=[
+    this.engines= [
         {name:<FaGoogle/>, prefix:"!g"},
         {name:<FaImages/>, prefix:"!gi"},
         {name:<FaYoutube/>, prefix:"!yt"},
@@ -15,20 +16,51 @@ class SearchBar extends React.Component
         {name:<FaStackOverflow/>, prefix:"!so"},
         {name:<FaCalculator/>, prefix:"!wa"},
         {name:<FaSpotify/>, prefix:"!spotify"},
-        {name:<FaAmazon/>, prefix:"!auk"},
+        {name:<FaAmazon/>, prefix:"!smileuk"},
+        {name:<FaReddit/>, prefix:"!reddit"},
+        {name:<FaMapMarkedAlt/>, prefix:"!mapsuk"},
       ];
     this.currentEngines = new Set();
-
-    this.handleCheckboxes = this.handleCheckboxes.bind(this);
+    this.selectedKeywords = new Set();
+    this.handleEngineCheckboxes = this.handleEngineCheckboxes.bind(this);
+    this.handleKeywordCheckboxes = this.handleKeywordCheckboxes.bind(this);
 
     this.eng = [];
     for (var i = 0; i < this.engines.length; i++) 
     {
-        this.eng.push(<EngineSelector callback={this.handleCheckboxes} engine={this.engines[i]}/>);
+        this.eng.push(<EngineSelector key={i} callback={this.handleEngineCheckboxes} engine={this.engines[i]}/>);
+    }
+
+    this.terms = [
+      "react",
+      "git",
+      "python",
+      "c++",
+      "r programming language",
+      "javascript",
+      "c#",
+      "embedded c",
+      "latex",
+      ".net core",
+      "how to",
+      "programming",
+      "tutorial",
+      "standard library",
+    ];
+
+    this.keywords = [];
+    for (var j = 0; j < this.terms.length; j++) 
+    {
+        this.keywords.push(<KeywordSelector key={j} callback={this.handleKeywordCheckboxes} keyword={this.terms[j]}/>);
     }
   }
 
-  handleCheckboxes(engine)
+  focusSearchbar()
+  {
+    this.searchbar.current.focus();
+  }
+
+  handleEngineCheckboxes(engine)
   {
     if(this.currentEngines.has(engine))
     {
@@ -40,11 +72,23 @@ class SearchBar extends React.Component
     }
   }
 
+  handleKeywordCheckboxes(engine)
+  {
+    if(this.selectedKeywords.has(engine))
+    {
+      this.selectedKeywords.delete(engine);
+    }
+    else
+    {
+      this.selectedKeywords.add(engine);
+    }
+  }
+
   handleKeyPress = (event) => 
   {
     if(event.key === 'Enter')
     {
-      const searchterm = encodeURIComponent(document.getElementById("searchbar").value)
+      const searchterm = encodeURIComponent(this.keywordExtract(this.selectedKeywords)+document.getElementById("searchbar").value)
       if(this.currentEngines.size === 0)
       {
         window.open("https://duckduckgo.com/?q="+searchterm, "_self");
@@ -74,6 +118,15 @@ class SearchBar extends React.Component
     return newset;
   }
 
+  keywordExtract(set)
+  {
+    var keywordString = "";
+    for (let item of set)
+    { 
+      keywordString = keywordString + item + " ";
+    }
+    return keywordString;
+  }
 
   render() 
   {
@@ -82,6 +135,9 @@ class SearchBar extends React.Component
       {this.eng}
       </div>
       <input id="searchbar" type="search" onKeyPress={this.handleKeyPress} autoFocus/>
+      <div className="carousel topmargin">
+      {this.keywords}
+      </div>
     </div>
   }
 }

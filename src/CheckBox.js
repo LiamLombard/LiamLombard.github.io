@@ -1,6 +1,6 @@
 import React from 'react';
 
-class EngineSelector extends React.Component 
+class CheckBox extends React.Component 
 {
   constructor(props)
   {
@@ -14,17 +14,17 @@ class EngineSelector extends React.Component
 
   toggleChecked = () => {
     this.setState(state => ({ checked: !state.checked }));
-    this.props.callback(this.props.engine);
+    this.props.callback(this.props.callbackArg);
   };
   
   render() 
   {
     return <div className={this.state.checked ? "engineSelector checked" : "engineSelector"}>
-      <label className="noselect">{this.props.engine.name}
+      <label className="noselect">{this.props.labelText}
       <input type="checkbox" checked={this.state.checked} onChange={this.toggleChecked}></input>
       </label>
     </div>
   }
 }
 
-export default EngineSelector;
+export default CheckBox;

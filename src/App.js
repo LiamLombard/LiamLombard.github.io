@@ -4,9 +4,32 @@ import './App.css';
 import { FaGithub, FaYoutube, FaTwitch, FaReddit, FaDropbox, FaPlay, FaShoppingBag, FaTv, FaFacebook, FaMailBulk, FaLinkedin, FaBitbucket, FaGoogleDrive, FaFacebookMessenger, FaSpotify, FaAmazon } from 'react-icons/fa';
 import SearchBar from './SearchBar';
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component  
+{
+  constructor()
+  {
+    super();
+    this.mainDiv = React.createRef();
+  }
+
+  componentDidMount() 
+  {
+    this.mainDiv.current.addEventListener("keydown", this.handleKeyPressed);
+  }
+
+  componentWillUnmount() 
+  {
+    this.mainDiv.current.removeEventListener("keydown", this.handleKeyPressed);
+  }
+
+  handleKeyPressed(e) 
+  {
+    document.getElementById("searchbar").focus();
+  }
+
+  render()
+  {
+    return <div className="App" tabIndex="0" ref={this.mainDiv} onKeyDown={this.handleKeyPressed}>
       <div className="App-header">
         <LinkButton link="https://github.com/" icon={<FaGithub/>}/>
         <LinkButton link="https://facebook.com/" icon={<FaFacebook/>}/>
@@ -29,7 +52,7 @@ function App() {
         <SearchBar/>
       </div>
     </div>
-  );
+  }
 }
 
 export default App;

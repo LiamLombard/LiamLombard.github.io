@@ -33,11 +33,6 @@ class EngineSelector extends React.Component
     }
   }
 
-  getEngines()
-  {
-    return this.currentEngines;
-  }
-
   handleCheckboxes(engine)
   {
     this.props.callback(engine);

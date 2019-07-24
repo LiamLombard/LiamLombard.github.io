@@ -1,8 +1,6 @@
 import React from 'react';
 import EngineSelector from './EngineSelector';
-// import KeywordSelector from './KeywordSelector';
-
-import CheckBox from './CheckBox';
+import KeywordSelector from './KeywordSelector';
 
 class SearchBar extends React.Component 
 {
@@ -15,34 +13,6 @@ class SearchBar extends React.Component
     this.handleKeywordCheckboxes = this.handleKeywordCheckboxes.bind(this);
     this.handleEngineCheckboxes = this.handleEngineCheckboxes.bind(this);
 
-    this.terms = [
-      "react",
-      "git",
-      "python",
-      "c++",
-      "r programming language",
-      "javascript",
-      "c#",
-      "embedded c",
-      "latex",
-      ".net core",
-      "how to",
-      "programming",
-      "tutorial",
-      "standard library",
-      "vscode",
-    ];
-
-    this.keywords = [];
-    for (var j = 0; j < this.terms.length; j++) 
-    {
-        this.keywords.push(<CheckBox  key={j} 
-                                      callback={this.handleKeywordCheckboxes} 
-                                      callbackArg={this.terms[j]}
-                                      labelText={this.terms[j]}
-                                      cssClass="keywordSelector"
-                                      />);
-    }
   }
 
   handleEngineCheckboxes(engine)
@@ -121,9 +91,7 @@ class SearchBar extends React.Component
       <div className="inputcontainer">
         <input id="searchbar" type="search" onKeyPress={this.handleKeyPress} autoFocus/>
       </div>
-      <div className="carousel topmargin">
-      {this.keywords}
-      </div>
+      <KeywordSelector callback={this.handleKeywordCheckboxes} />
     </div>
   }
 }

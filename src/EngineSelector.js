@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaGoogle, FaImages, FaStackOverflow, FaCalculator, FaYoutube, FaSpotify, FaAmazon, FaReddit, FaMapMarkedAlt } from 'react-icons/fa';
+import {FaGoogle, FaImages, FaStackOverflow, FaCalculator, FaYoutube, FaAmazon, FaReddit, FaMapMarkedAlt, FaSearch, FaGithub } from 'react-icons/fa';
 import CheckBox from './CheckBox';
 class EngineSelector extends React.Component 
 {
@@ -9,16 +9,18 @@ class EngineSelector extends React.Component
     this.handleCheckboxes = this.handleCheckboxes.bind(this);
 
     this.engines= [
+      {name:<FaSearch/>, prefix:""},
       {name:<FaGoogle/>, prefix:"!g"},
       {name:<FaImages/>, prefix:"!gi"},
       {name:<FaYoutube/>, prefix:"!yt"},
-      {name:<img id="mdn-logo" src="mdnlogo.svg" alt=""></img>, prefix:"!mdn"},
+      {name:<img id="mdn-logo" src="mdnlogo.svg" alt=""/>, prefix:"!mdn"},
       {name:<FaStackOverflow/>, prefix:"!so"},
+      {name:<FaGithub/>, prefix:"!gh"},
       {name:<FaCalculator/>, prefix:"!wa"},
-      {name:<FaSpotify/>, prefix:"!spotify"},
       {name:<FaAmazon/>, prefix:"!smileuk"},
       {name:<FaReddit/>, prefix:"!reddit"},
       {name:<FaMapMarkedAlt/>, prefix:"!mapsuk"},
+      {name:<img id="cpp-logo" src="cpplogo.svg" alt=""/>, prefix:"!cppr"},
     ];
     this.currentEngines = new Set();
 
@@ -29,7 +31,8 @@ class EngineSelector extends React.Component
                                 callback={this.handleCheckboxes} 
                                 callbackArg={this.engines[i]} 
                                 labelText={this.engines[i].name}
-                                cssClass="engineSelector"/>);
+                                cssClass="engineSelector checklabel noselect"
+                                />);
     }
   }
 

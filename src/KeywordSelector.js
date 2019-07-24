@@ -23,6 +23,12 @@ class KeywordSelector extends React.Component
       "tutorial",
       "standard library",
       "vscode",
+      "cli",
+      "command line",
+      "gui",
+      "linux",
+      "windows",
+      "android",
     ];
 
     this.keywords = [];
@@ -32,7 +38,7 @@ class KeywordSelector extends React.Component
                                       callback={this.handleCheckboxes} 
                                       callbackArg={this.terms[j]}
                                       labelText={this.terms[j]}
-                                      cssClass="keywordSelector"
+                                      cssClass="keywordSelector checklabel noselect"
                                       />);
     }
   }

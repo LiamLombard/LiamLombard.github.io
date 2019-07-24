@@ -79,14 +79,24 @@ input[type="checkbox"]
   border-radius: 4px;
 }
 
+.checklabel
+{
+  padding: 0.75vw 0.75vw 0.75vw 0.75vw;
+  margin: 0.2vw 0.2vw 0.2vw 0.2vw;
+}
+
+.checkdiv
+{
+  padding: 0.9vw 0.2vw 0.9vw 0.2vw;
+}
+
 .engineSelector
 {
   line-height: 1.5em;
-  padding: 0.75vw 0.75vw 0.4vw 0.75vw;
-  margin: 0.1vw 0.1vw 0.1vw 0.1vw;
   font: 1.5em sans-serif;
   color: #8c95ad;
   border-radius: 3px;
+  padding-bottom: 0.4vw;
 }
 
 .engineSelector:hover
@@ -97,9 +107,7 @@ input[type="checkbox"]
 .keywordSelector
 {
   line-height: 40px;
-  padding: 0.75vw 0.75vw 0.75vw 0.75vw;
-  margin: 0.1vw 0.1vw 0.1vw 0.1vw;
-  font: 1.5em sans-serif;
+  font: 1.3em sans-serif;
   color: #8c95ad;
   border-radius: 3px;
 }
@@ -140,4 +148,9 @@ a:hover {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+img[id="cpp-logo"]
+{
+  height: 1em;
 }

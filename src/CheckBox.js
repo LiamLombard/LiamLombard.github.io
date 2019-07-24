@@ -19,7 +19,7 @@ class CheckBox extends React.Component
   
   render() 
   {
-    return <div className={this.state.checked ? "engineSelector checked" : "engineSelector"}>
+    return <div className={this.state.checked ?  this.props.cssClass + " checked" : this.props.cssClass}>
       <label className="noselect">{this.props.labelText}
       <input type="checkbox" checked={this.state.checked} onChange={this.toggleChecked}></input>
       </label>

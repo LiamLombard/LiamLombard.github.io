@@ -41,7 +41,7 @@ class App extends React.Component
         <LinkButton link="https://smile.amazon.co.uk/" icon={<FaAmazon/>}/>
         <LinkButton link="https://reddit.com/" icon={<FaReddit/>}/>
         <LinkButton link="https://dropbox.com/" icon={<FaDropbox/>}/>
-        <LinkButton link="https://dropdrive.google.com/drive/my-drive" icon={<FaGoogleDrive/>}/>
+        <LinkButton link="https://drive.google.com/drive/my-drive" icon={<FaGoogleDrive/>}/>
         <LinkButton link="https://bitbucket.org/" icon={<FaBitbucket/>}/>
         <LinkButton link="https://netflix.com/" icon={<FaPlay/>}/>
         <LinkButton link="https://humblebundle.com/" icon={<FaShoppingBag/>}/>

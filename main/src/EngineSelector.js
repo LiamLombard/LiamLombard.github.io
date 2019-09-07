@@ -1,14 +1,19 @@
 import React from 'react';
 import {FaGoogle, FaImages, FaStackOverflow, FaCalculator, FaYoutube, FaAmazon, FaReddit, FaMapMarkedAlt, FaSearch, FaGithub } from 'react-icons/fa';
+import {MdHttp, MdHttps} from 'react-icons/md';
 import CheckBox from './CheckBox';
+
+
 class EngineSelector extends React.Component 
 {
   constructor(props)
   {
     super(props);
     this.handleCheckboxes = this.handleCheckboxes.bind(this);
-
+    
     this.engines= [
+      {name:<MdHttp/>, prefix:"http://"},
+      {name:<MdHttps/>, prefix:"https://"},
       {name:<FaSearch/>, prefix:""},
       {name:<FaGoogle/>, prefix:"!g"},
       {name:<FaImages/>, prefix:"!gi"},

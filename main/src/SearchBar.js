@@ -53,7 +53,14 @@ class SearchBar extends React.Component
       {
         for (let item of this.orderSet(this.currentEngines))
         {
-          window.open("https://duckduckgo.com/?q="+item.prefix+" "+searchterm, (this.currentEngines.size === 1) ? "_self": "_blank");
+          if(item.prefix === "http://" || item.prefix === "https://")
+          {
+            window.location.href = item.prefix + document.getElementById("searchbar").value;
+          }
+          else
+          {
+            window.open("https://duckduckgo.com/?q="+item.prefix+" "+searchterm, (this.currentEngines.size === 1) ? "_self": "_blank");
+          }
         }
       }
     }

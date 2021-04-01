@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+
+<body onkeydown="focus_search(event)">
+  <div id="elm-app"></div>
+
+  <script src="elm.js"></script>
+  <script>
+    var app = Elm.Main.init({
+      node: document.getElementById("elm-app")
+    });
+
+    function focus_search(event)
+    {
+        if (event.keyCode == 13)
+        {
+            const searchterm = encodeURIComponent(document.getElementById("searchbar").value)
+            window.open("https://duckduckgo.com/?q="+searchterm, "_self");
+        }
+        document.getElementById("searchbar").focus()
+    }
+  </script>
+</body>

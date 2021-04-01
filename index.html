@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Start</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    </head>
+
+    <body onkeydown="focus_search(event)">
+        <div class="App topmargin">
+            <div>
+                <a href="https://github.com/" class="fa-4x fab fa-github"></a>
+                <a href="https://gitlab.com/" class="fa-4x fab fa-gitlab"></a>
+                <a href="https://bitbucket.org/" class="fa-4x fab fa-bitbucket"></a>
+                <a href="https://dropbox.com/" class="fa-4x fab fa-dropbox"></a>
+                <a href="https://drive.google.com/drive/my-drive" class="fa-4x fab fa-google-drive"></a>
+                <a href="https://facebook.com/" class="fa-4x fab fa-facebook"></a>
+                <a href="https://messenger.com/" class="fa-4x fab fa-facebook-messenger"></a>
+                <a href="https://linkedin.com/" class="fa-4x fab fa-linkedin"></a>
+                <a href="https://outlook.live.com/owa/?path=/mail/inbox" class="fa-4x fa fa-envelope"></a>
+                <a href="https://youtube.com/" class="fa-4x fab fa-youtube"></a>
+                <a href="https://twitch.tv/directory" class="fa-4x fab fa-twitch"></a>
+                <a href="https://reddit.com/" class="fa-4x fab fa-reddit"></a>
+                <a href="https://smile.amazon.co.uk/" class="fa-4x fab fa-amazon"></a>
+                <a href="https://humblebundle.com/" class="fa-4x fa fa-shopping-bag"></a>
+                <a href="https://app.plex.tv/desktop" class="fa-4x fa fa-tv"></a>
+                <a href="https://spotify.com/" class="fa-4x fab fa-spotify"></a>
+                <a href="https://books.lim-lom.com/" class="fa-4x fa fa-book"></a>
+                <a href="https://rss.lim-lom.com/" class="fa-4x fa fa-rss"></a>
+            </div>
+            <input placeholder="Search" id="searchbar" class="carousel topmargin" autofocus="">
+        </div>
+    </body>
+
+    <script>
+      function focus_search(event)
+      {
+          if (event.keyCode == 13)
+          {
+              const searchterm = encodeURIComponent(document.getElementById("searchbar").value)
+              window.open("https://duckduckgo.com/?q="+searchterm, "_self");
+          }
+          document.getElementById("searchbar").focus()
+      }
+    </script>
+</html>

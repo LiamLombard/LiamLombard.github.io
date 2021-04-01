@@ -9,20 +9,6 @@ body
   flex-direction: column;
 }
 
-.App-header {
-  min-height: 20vh;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
-}
-
-.App-bottom {
-  min-height: 70vh;
-}
-
 .inputcontainer
 {
   height: 7.5vh;
@@ -31,7 +17,7 @@ body
 #searchbar
 {
   font: 1.2em sans-serif;
-  background-color: #3b414d;  
+  background-color: #3b414d;
   border-color: #4c5363;
   color: #a8b0c5;
   line-height: 40px;
@@ -45,10 +31,9 @@ body
 }
 
 #searchbar:focus
-{ 
+{
   border-style: double;
 }
-
 
 .carousel
 {
@@ -69,84 +54,29 @@ body
   margin-top: 10vh;
 }
 
-#mdn-logo
-{
-  height: 1em;
-  border-radius: 4px;
-}
-
-.checklabel
-{
-  padding: 0.75vw 0.75vw 0.75vw 0.75vw;
-  margin: 0.2vw 0.2vw 0.2vw 0.2vw;
-}
-
-.checkdiv
-{
-  padding: 0.9vw 0.2vw 0.9vw 0.2vw;
-}
-
-.engineSelector
-{
-  line-height: 1.5em;
-  font: 1.5em sans-serif;
-  color: #8c95ad;
-  border-radius: 3px;
-  padding-bottom: 0.4vw;
-}
-
-.engineSelector:hover
-{
-  opacity: 0.75;
-}
-
-.keywordSelector
-{
-  line-height: 40px;
-  font: 1.3em sans-serif;
-  color: #8c95ad;
-  border-radius: 3px;
-}
-
-.keywordSelector:hover
-{
-  opacity: 0.75;
-}
-
-.checked
-{
-  background-color: #43474e;
-}
-
 a
 {
   padding-left: 0.5vw;
   padding-right:0.5vw;
   color: rgb(28, 134, 177);
+
+  /* no select */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
 }
 a:focus { outline: 0; }
 
-a:visited 
-{ 
+a:visited
+{
   color: rgb(28, 134, 177);
 }
 
 a:hover {
   text-decoration: none !important;
   opacity: 0.7;
-}
-
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-
-img[id="cpp-logo"]
-{
-  height: 1em;
 }

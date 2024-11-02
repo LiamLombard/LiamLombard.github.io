@@ -1,0 +1,66 @@
+body {
+  background-color: #282c34;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 40rem;
+  margin: auto;
+  margin-top: 5rem;
+  width: 60vw;
+}
+
+
+#search {
+  font: 1.2em sans-serif;
+  background-color: #3b414d;
+  border-color: #4c5363;
+  color: #a8b0c5;
+  height: 40px;
+  text-align: center;
+  border-radius: 3px;
+  border-style: initial;
+  padding: 3rem;
+  width: 100%;
+}
+
+#search:focus {
+  border-style: double;
+}
+
+
+a {
+  text-decoration: none !important;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  color: rgb(28, 134, 177);
+
+  /* no select */
+  /* iOS Safari */
+  -webkit-touch-callout: none;
+  /* Safari */
+  -webkit-user-select: none;
+  /* Konqueror HTML */
+  -khtml-user-select: none;
+  /* Firefox */
+  -moz-user-select: none;
+  /* Internet Explorer/Edge */
+  -ms-user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */
+  user-select: none;
+}
+
+a:focus {
+  outline: 0;
+}
+
+a:visited {
+  color: rgb(28, 134, 177);
+}
+
+a:hover {
+  opacity: 0.7;
+}

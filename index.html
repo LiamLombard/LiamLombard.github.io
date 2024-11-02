@@ -1,44 +1,48 @@
 <html>
-    <head>
-        <title>Start</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style/main.css">
-        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-    </head>
 
-    <body onkeydown="focus_search(event)">
-        <div class="App topmargin">
-            <div>
-                <a href="https://github.com/" class="fa-4x fab fa-github"></a>
-                <a href="https://gitlab.com/" class="fa-4x fab fa-gitlab"></a>
-                <a href="https://bitbucket.org/" class="fa-4x fab fa-bitbucket"></a>
-                <a href="https://dropbox.com/" class="fa-4x fab fa-dropbox"></a>
-                <a href="https://drive.google.com/drive/my-drive" class="fa-4x fab fa-google-drive"></a>
-                <a href="https://facebook.com/" class="fa-4x fab fa-facebook"></a>
-                <a href="https://messenger.com/" class="fa-4x fab fa-facebook-messenger"></a>
-                <a href="https://linkedin.com/" class="fa-4x fab fa-linkedin"></a>
-                <a href="https://outlook.live.com/owa/?path=/mail/inbox" class="fa-4x fa fa-envelope"></a>
-                <a href="https://youtube.com/" class="fa-4x fab fa-youtube"></a>
-                <a href="https://twitch.tv/directory" class="fa-4x fab fa-twitch"></a>
-                <a href="https://reddit.com/" class="fa-4x fab fa-reddit"></a>
-                <a href="https://smile.amazon.co.uk/" class="fa-4x fab fa-amazon"></a>
-                <a href="https://humblebundle.com/" class="fa-4x fa fa-shopping-bag"></a>
-                <a href="https://spotify.com/" class="fa-4x fab fa-spotify"></a>
-                <a href="https://www.inoreader.com/all_articles" class="fa-4x fa fa-rss"></a>
-            </div>
-            <input placeholder="Search" id="searchbar" class="carousel topmargin" autofocus="">
+<head>
+    <title>Start</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+
+<body onkeydown="focus_search(event)">
+    <main>
+        <div>
+            <a href="https://github.com/" class="fa-4x fab fa-github"></a>
+            <a href="https://gitlab.com/" class="fa-4x fab fa-gitlab"></a>
+            <a href="https://dropbox.com/" class="fa-4x fab fa-dropbox"></a>
+            <a href="https://drive.google.com/drive/my-drive" class="fa-4x fab fa-google-drive"></a>
         </div>
-    </body>
+        <div>
+            <a href="https://facebook.com/" class="fa-4x fab fa-facebook"></a>
+            <a href="https://linkedin.com/" class="fa-4x fab fa-linkedin"></a>
+            <a href="https://youtube.com/" class="fa-4x fab fa-youtube"></a>
+            <a href="https://twitch.tv/directory" class="fa-4x fab fa-twitch"></a>
+            <a href="https://reddit.com/" class="fa-4x fab fa-reddit"></a>
+        </div>
+        <div>
+            <a href="https://messenger.com/" class="fa-4x fab fa-facebook-messenger"></a>
+            <a href="https://outlook.live.com/owa/?path=/mail/inbox" class="fa-4x fa fa-envelope"></a>
+            <a href="https://mail.google.com/mail/u/1/" class="fa-4x fa fa-inbox"></a>
+            <a href="https://web.whatsapp.com/" class="fa-4x fab fa-whatsapp"></a>
+        </div>
+        <div>
+            <a href="https://music.youtube.com/" class="fa-4x fa fa-music"></a>
+            <a href="https://www.inoreader.com/all_articles" class="fa-4x fa fa-rss"></a>
+        </div>
+        <input id="search" placeholder="Search..." autofocus="">
+    </main>
+</body>
 
-    <script>
-      function focus_search(event)
-      {
-          if (event.keyCode == 13)
-          {
-              const searchterm = encodeURIComponent(document.getElementById("searchbar").value)
-              window.open("https://duckduckgo.com/?q="+searchterm, "_self");
-          }
-          document.getElementById("searchbar").focus()
-      }
-    </script>
+<script>
+    function focus_search(event) {
+        if (event.keyCode == 13) {
+            const searchterm = encodeURIComponent(document.getElementById("search").value)
+            window.open(`https://duckduckgo.com/?q=${searchterm}`, "_self");
+        }
+        document.getElementById("searchbar").focus()
+    }
+</script>
+
 </html>
